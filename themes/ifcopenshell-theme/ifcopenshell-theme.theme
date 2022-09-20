@@ -1,4 +1,7 @@
 [Theme]
 engine = mako
 parent = base
+author = The IfcOpenShell Contributors
+author_url = https://ifcopenshell.org/
+
 
