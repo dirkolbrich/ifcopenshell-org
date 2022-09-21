@@ -32,3 +32,20 @@ prepare the dev environment
   nikloa build
   nikola serve -b
   ```
+
+## CSS Styles
+
+This website uses the TailwindCSS framework for styling its CSS classes.
+
+The current imlementation loads the TailwindCSS from a CDN.
+
+```
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+```
+
+> ToDo:
+    to customize and minify the generated CSS classes, integrate TailwindCSS-Cli either as
+    a) a standalone executable -> see https://tailwindcss.com/blog/standalone-cli or
+    b) a `NPM` dependency -> see https://tailwindcss.com/docs/installation
