@@ -1,0 +1,64 @@
+## -*- coding: utf-8 -*-
+
+<%def name="base_header()">
+    <header class="bg-white">
+        <style type="text/css">
+            input#nav-toggle:checked~label#nav-show {
+                display: none
+            }
+
+            input#nav-toggle:checked~label#nav-hide {
+                display: flex
+            }
+
+            input#nav-toggle:checked~#nav-menu {
+                display: flex
+            }
+        </style>
+        <nav
+            class="flex flex-wrap items-center justify-items-stretch mx-auto max-w-screen-2xl px-4 sm:px-5 xl:px-6 2xl:px-8 pb-4 sm:pb-0">
+            <a class="flex items-center justify-self-start mt-4 mb-0 sm:mb-4 mr-4" href="/">
+                <img class="w-8 h-8 lg:w-12 lg:h-12" src="/images/ifcos-logo-512x512.svg">
+            </a>
+            <input id="nav-toggle" type="checkbox" class="hidden">
+            <label id="nav-show" for="nav-toggle"
+                class="absolute inset-y-5 right-4 text-stone-800 sm:hidden hover:text-green-600">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Menu Open</title>
+                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0V0z"></path>
+                </svg>
+            </label>
+            <label id="nav-hide" for="nav-toggle"
+                class="absolute inset-y-5 right-4 hidden text-stone-800 hover:text-green-600">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Menu Close</title>
+                    <polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+                        transform="rotate(45 10 10)"></polygon>
+                </svg>
+            </label>
+            <ul id="nav-menu"
+                class="justify-self-start hidden w-full space-x-4 sm:flex sm:w-auto sm:block mt-4 sm:mt-0">
+                <li class="">
+                    <a class="inline-block no-underline hover:-mb-2 hover:border-b-2 hover:border-green-600 active-link"
+                        href="/">home</a>
+                </li>
+                <li>
+                    <a class="inline-block no-underline hover:-mb-2 hover:border-b-2 hover:border-green-600"
+                        href="/products">products</a>
+                </li>
+                <li>
+                    <a class="inline-block no-underline hover:-mb-2 hover:border-b-2 hover:border-green-600"
+                        href="/community">community</a>
+                </li>
+                <li>
+                    <a class="inline-block no-underline hover:-mb-2 hover:border-b-2 hover:border-green-600"
+                        href="/docs">documentation</a>
+                </li>
+                <li>
+                    <a class="inline-block no-underline hover:-mb-2 hover:border-b-2 hover:border-green-600"
+                        href="/blog">articles</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+</%def>

@@ -1,0 +1,41 @@
+## -*- coding: utf-8 -*-
+<%inherit file="base.tmpl" />
+
+<%block name="content">
+    % for post in posts:
+    <article class="post-${post.meta('type')}" itemscope="itemscope" itemtype="http://schema.org/Article">
+        <header>
+            <h1><a href="${post.permalink()}">${post.title()|h}</a></h1>
+            <div class="metadata">
+                <p><span itemprop="author">
+                        % if author_pages_generated and multiple_authors_per_post:
+                        % for author in post.authors():
+                        <a href="${_link('author', author)}">${author|h}</a>
+                        % endfor
+                        % elif author_pages_generated:
+                        <a href="${_link('author', post.author())}">${post.author()|h}</a>
+                        % else:
+                        ${post.author()|h}
+                        % endif
+                    </span></p>
+                <p>
+                    <a href="${post.permalink()}" rel="bookmark">
+                        <time datetime="${post.formatted_date('webiso')}" itemprop="datePublished"
+                            title="${post.formatted_date(date_format)|h}">${post.formatted_date(date_format)|h}</time>
+                        % if post.updated and post.updated != post.date:
+                        <span> (${messages("updated")}
+                            <time datetime="${post.formatted_updated('webiso')}" itemprop="dateUpdated"
+                                title="${post.formatted_updated(date_format)|h}">${post.formatted_updated(date_format)|h}</time>)</span>
+                        % endif
+                    </a>
+                </p>
+            </div>
+        </header>
+        %if index_teasers:
+        ${post.text(teaser_only=True)}
+        %else:
+        ${post.text(teaser_only=False)}
+        %endif
+    </article>
+    % endfor
+</%block>

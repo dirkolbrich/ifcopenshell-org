@@ -1,0 +1,8 @@
+## -*- coding: utf-8 -*-
+<%inherit file="base.tmpl" />
+
+<%block name="content">
+    <article class="post-${post.meta('type')}" itemscope="itemscope" itemtype="http://schema.org/Article">
+        ${post.text()}
+    </article>
+</%block>

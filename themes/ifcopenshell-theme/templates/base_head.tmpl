@@ -1,0 +1,42 @@
+## -*- coding: utf-8 -*-
+
+<%def name="html_head()">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        %if description:
+        <meta name="description" content="${description|h}">
+        %endif
+        %if title == blog_title:
+        <title>${blog_title|h}</title>
+        %else:
+        <title>${blog_title|h} - ${title|h}</title>
+        %endif
+        %if meta_generator_tag:
+        <meta name="generator" content="Nikola (getnikola.com)">
+        %endif
+        <link rel="canonical" href="${abs_link(permalink)}">
+        %if favicons:
+        %for name, file, size in favicons:
+        <link rel="${name}" href="${file}" sizes="${size}" />
+        %endfor
+        %endif
+        %if prevlink:
+        <link rel="prev" href="${prevlink}" type="text/html">
+        %endif
+        %if nextlink:
+        <link rel="next" href="${nextlink}" type="text/html">
+        %endif
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter">
+        <style>
+            body {
+                font-family: 'Inter', sans-serif;
+            }
+        </style>
+
+        ${extra_head_data}
+    </head>
+</%def>
