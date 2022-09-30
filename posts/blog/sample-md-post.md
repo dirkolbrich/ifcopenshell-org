@@ -3,7 +3,7 @@
 .. slug: sample-md-post
 .. date: 2022-09-21 10:04:25 UTC+02:00
 .. tags: 
-.. category: 
+.. category: blog
 .. link: 
 .. description: 
 .. type: text

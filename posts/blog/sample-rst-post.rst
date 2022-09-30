@@ -2,7 +2,7 @@
 .. slug: sample-rst-post
 .. date: 2022-09-21 10:05:03 UTC+02:00
 .. tags: 
-.. category: 
+.. category: blog
 .. link: 
 .. description: 
 .. type: text

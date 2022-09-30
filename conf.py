@@ -142,8 +142,8 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ("/blog/archive/", "Archive"),
-        ("/blog/categories/", "Tags"),
+        ("/archive/", "Archive"),
+        ("/categories/", "Tags"),
         ("/rss.xml", "RSS feed"),
     ),
 }
@@ -236,11 +236,16 @@ THEME_CONFIG = {
 #     )
 
 POSTS = (
-    ("posts/*.rst", "blog", "post.tmpl"),
-    ("posts/*.md", "blog", "post.tmpl"),
-    ("posts/*.txt", "blog", "post.tmpl"),
-    ("posts/*.html", "blog", "post.tmpl"),
-    ("posts/*.ipynb", "blog", "post.tmpl"),
+    ("posts/blog/*.rst", "blog", "post.tmpl"),
+    ("posts/blog/*.md", "blog", "post.tmpl"),
+    ("posts/blog/*.txt", "blog", "post.tmpl"),
+    ("posts/blog/*.html", "blog", "post.tmpl"),
+    ("posts/blog/*.ipynb", "blog", "post.tmpl"),
+    ("posts/academy/*.rst", "academy", "post.tmpl"),
+    ("posts/academy/*.md", "academy", "post.tmpl"),
+    ("posts/academy/*.txt", "academy", "post.tmpl"),
+    ("posts/academy/*.html", "academy", "post.tmpl"),
+    ("posts/academy/*.ipynb", "academy", "post.tmpl"),
 )
 PAGES = (
     ("pages/*.rst", "", "page.tmpl"),
@@ -582,7 +587,7 @@ HIDDEN_AUTHORS = ['Guest']
 # Final location for the main blog page and sibling paginated pages is
 # output / TRANSLATION[lang] / INDEX_PATH / index-*.html
 # (translatable)
-INDEX_PATH = "blog"
+INDEX_PATH = "articles"
 
 # Optional HTML that displayed on “main” blog index.html files.
 # May be used for a greeting. (translatable)
@@ -607,7 +612,7 @@ CREATE_SINGLE_ARCHIVE = True
 # output / TRANSLATION[lang] / ARCHIVE_PATH / YEAR / MONTH / index.html
 # output / TRANSLATION[lang] / ARCHIVE_PATH / YEAR / MONTH / DAY / index.html
 # (translatable)
-ARCHIVE_PATH = "blog/archive"
+ARCHIVE_PATH = "archive"
 ARCHIVE_FILENAME = "index.html"
 
 # If ARCHIVES_ARE_INDEXES is set to True, each archive page which contains a list

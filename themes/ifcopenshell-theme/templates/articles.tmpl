@@ -1,0 +1,16 @@
+## -*- coding: utf-8 -*-
+<%inherit file="base.tmpl" />
+
+<%block name="content">
+    template articles
+    <ul>
+        <li>${post.text()}</li>
+        <li>${pageargs}</li>
+        <li>${type(post)}</li>
+        % for arg in pageargs:
+        <li>${arg}</li>
+        % endfor
+
+    </ul>
+
+</%block>
